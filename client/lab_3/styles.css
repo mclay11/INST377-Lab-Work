@@ -4,6 +4,22 @@
   box-sizing: border-box;
 }
 
+.title{
+    display: inline-block;
+    background-color: rgba(0,139, 139,0.8);
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+.wrapper {
+    display:flex;
+    flex-direction: column;
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    margin:10px;
+  }
+
 .menu-container {
   color: #fff;
   background-color: #5995da; /* Blue */
@@ -40,8 +56,8 @@
   width: 900px;
   height: 300px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: stretch;
 }
 
 .logo {
@@ -64,7 +80,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
