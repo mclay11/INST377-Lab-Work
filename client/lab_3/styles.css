@@ -44,11 +44,15 @@
     align-items: stretch;
   }
 
-  .social,
-  .logo,
-  .subscribe {
+  .logo {
     border: 1px solid #5995DA;
   }
+
+  .social,
+  .subscribe {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
 
   .photo-grid-container {
     display: flex;
