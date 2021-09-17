@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 
-.title{
+a {
+    text-decoration: none;
+}
+
+.title {
     display: inline-block;
     background-color: rgba(0,139, 139,0.8);
     padding: 10px 15px;
@@ -41,6 +45,10 @@
 
 .login {
   margin-left: 20px;
+}
+
+.logo {
+    display: flex;
 }
 
 .header-container {
