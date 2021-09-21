@@ -29,7 +29,7 @@ body {
 .border-top {
     width: 660px;
     height: 50px;
-    position:  absolute;
+    position: absolute;
     background-color: white;
     z-index: +2;
     top: -50px;
