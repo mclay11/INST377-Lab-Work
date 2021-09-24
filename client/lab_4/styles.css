@@ -91,34 +91,36 @@
     flex: initial;
     width: 300px;
   }
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+ }
   
-.carousel {
+.photo-grid-container .carousel {
     overflow: hidden;
     position: relative;
-    display: flex;
-    justify-content: space-evenly;
+    max-width: 600px;
+    justify-content: space-between;
   }
   
-  .carousel .carousel__item,
-  .carousel .carousel__item--hidden {
+  .photo-grid-container .carousel .carousel__item,
+  .photo-grid-container .carousel .carousel__item--hidden {
     display: none;
   }
   
-  .carousel .carousel__item img {
+  .photo-grid-container .carousel .carousel__item img {
     width: 100%;
     max-width: 600px;
     height: auto;
-    display: flex;
-    justify-content: center;
-
   }
   
-  .carousel .carousel__item--visible {
+  .photo-grid-container .carousel .carousel__item--visible {
     display: block;
     animation: fadeVisibility 0.5s;
   }
   
-  .carousel .carousel__actions {
+  .photo-grid-container .carousel .carousel__actions {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -127,23 +129,20 @@
     transform: translateY(-50%);
   }
   
-  .carousel .carousel__actions button {
+  .photo-grid-container .carousel__actions button {
     font-weight: bold;
+    border-radius: 3px;
     cursor: pointer;
-    width: 40px;
+    width: 45px;
     height: 20px;
     border: 0;
+    transform: translateY(700%)
   }
 
-  .carousel .carousel__actions button:focus {
+  .photo-grid-container .carousel__actions button:focus {
     background-color:rgb(185, 37, 185) ;
-      border-color: rgb(30, 22, 82);
+      border-color: rgb(85, 145, 223);
+      border-style: solid;
+      border-width: 2px;
   }
   
-  .carousel .carousel__actions button#carousel__button--prev {
-    margin-left: 20px;
-  }
-
-  .carousel .carousel__actions button#carousel__button--next {
-    margin-right: 20px;
-  }
