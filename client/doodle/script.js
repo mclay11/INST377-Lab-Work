@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     isGoingRight = true;
     rightTimerId = setInterval(function () {
-      //changed to 313 to fit doodle image
       if (doodlerLeftSpace <= 313) {
         console.log("going right");
         doodlerLeftSpace += 5;
@@ -152,7 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(rightTimerId);
   }
 
-  //assign functions to keyCodes
   function control(e) {
     doodler.style.bottom = doodlerBottomSpace + "px";
     if (e.key === "ArrowLeft") {
@@ -165,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function gameOver() {
+    console.log("game over")
     isGameOver = true;
     while (grid.firstChild) {
       console.log("remove");
