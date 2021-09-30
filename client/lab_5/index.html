@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Miranda Clay Lab 5</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="columns is-vcentered is-centered is-mobile">
+          <div class="column is-full">
+            <div class="box" style="background-color: rgb(167, 133, 184)">
+              <p class="title">Miranda Clay's Lab 5</p>
+            </div>
+          </div>
+
+          <div class="column is-narrow">
+            <form action="/api" method="GET" class="box">
+              <div class="field">
+                <label class="label">First Name</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    style="border-color: black"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="label">Food Preference</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    type="text"
+                    style="border-color: black"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <div class="control">
+                  <label class="label">Veggie or Vegan?</label>
+                  <label class="radio">
+                    <input type="radio" name="preference" />
+                    Yes
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="preference" />
+                    No
+                  </label>
+                </div>
+              </div>
+
+              <button class="button is-primary">Submit</button>
+            </form>
+          </div>
+
+          <div class="column is-half">
+            <div class="box">This is going to be something in two weeks.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
