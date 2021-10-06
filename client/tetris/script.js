@@ -109,6 +109,46 @@ document.addEventListener('DOMContentLoaded', () => {
     draw();
   }
 
+  // assign functions to keyCodes
+  function control(e) {
+    if (e.keyCode === 37) {
+      moveLeft();
+    } else if (e.keyCode === 38) {
+      rotate();
+    } else if (e.keyCode === 39) {
+      moveRight();
+    } else if (e.keyCode === 40) {
+      moveDown();
+    }
+  }
+
+  document.addEventListener('keyup', control);
+
+  // move down function
+  function moveDown() {
+    undraw();
+    currentPosition += width;
+    draw();
+    freeze();
+  }
+
+  // freeze function
+  function freeze() {
+    if (
+      current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))
+    ) {
+      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
+      random = nextRandom;
+      nextRandom = Math.floor(Math.random() * theTetrominoes.length);
+      current = theTetrominoes[random][currentRotation];
+      currentPosition = 4;
+      draw();
+      displayShape();
+      addScore();
+      gameOver();
+    }
+  }
+
   /// fix Rotation
   function isAtRight() {
     return current.some((index) => (currentPosition + index + 1) % width === 0);
@@ -132,58 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
-
-  // rotate the tetromino
-  function rotate() {
-    undraw();
-    currentRotation++;
-    if (currentRotation === current.length) {
-      currentRotation = 0;
-    }
-    current = theTetrominoes[random][currentRotation];
-    checkRotatedPosition();
-    draw();
-  }
-
-  // freeze function
-  function freeze() {
-    if (
-      current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))
-    ) {
-      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
-      random = nextRandom;
-      nextRandom = Math.floor(Math.random() * theTetrominoes.length);
-      current = theTetrominoes[random][currentRotation];
-      currentPosition = 4;
-      draw();
-      displayShape();
-      addScore();
-      gameOver();
-    }
-  }
-
-  // move down function
-  function moveDown() {
-    undraw();
-    currentPosition += width;
-    draw();
-    freeze();
-  }
-
-  // assign functions to keyCodes
-  function control(e) {
-    if (e.keyCode === 37) {
-      moveLeft();
-    } else if (e.keyCode === 38) {
-      rotate();
-    } else if (e.keyCode === 39) {
-      moveRight();
-    } else if (e.keyCode === 40) {
-      moveDown();
-    }
-  }
-
-  document.addEventListener('keyup', control);
 
   // show up-next tetromino in mini-grid display
   const displaySquares = document.querySelectorAll('.mini-grid div');
