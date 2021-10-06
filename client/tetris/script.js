@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 /* eslint-disable no-use-before-define */
 /* eslint-disable linebreak-style */
 document.addEventListener('DOMContentLoaded', () => {
