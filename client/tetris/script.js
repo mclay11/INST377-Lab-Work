@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable linebreak-style */
 document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid');
@@ -105,13 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // freeze function
   function freeze() {
     if (
-      current.some((index) =>
-        squares[currentPosition + index + width].classList.contains('taken')
-      )
+      current.some((index) => squares[currentPosition + index + width].classList.contains('taken'))
     ) {
-      current.forEach((index) =>
-        squares[currentPosition + index].classList.add('taken')
-      );
+      current.forEach((index) => squares[currentPosition + index].classList.add('taken'));
       random = nextRandom;
       nextRandom = Math.floor(Math.random() * theTetrominoes.length);
       current = theTetrominoes[random][currentRotation];
@@ -131,9 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     if (!isAtLeftEdge) currentPosition -= 1;
     if (
-      current.some((index) =>
-        squares[currentPosition + index].classList.contains('taken')
-      )
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
     ) {
       currentPosition += 1;
     }
@@ -148,9 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     if (!isAtRightEdge) currentPosition += 1;
     if (
-      current.some((index) =>
-        squares[currentPosition + index].classList.contains('taken')
-      )
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
     ) {
       currentPosition -= 1;
     }
@@ -216,8 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     upNextTetrominoes[nextRandom].forEach((index) => {
       displaySquares[displayIndex + index].classList.add('tetromino');
-      displaySquares[displayIndex + index].style.backgroundColor =
-        colors[nextRandom];
+      displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom];
     });
   }
 
@@ -268,9 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // game over
   function gameOver() {
     if (
-      current.some((index) =>
-        squares[currentPosition + index].classList.contains('taken')
-      )
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
     ) {
       scoreDisplay.innerHTML = 'end';
       clearInterval(timerId);
