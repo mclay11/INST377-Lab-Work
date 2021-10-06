@@ -79,36 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // move the tetromino left, unless is at the edge or there is a blockage
-  function moveLeft() {
-    undraw();
-    const isAtLeftEdge = current.some(
-      (index) => (currentPosition + index) % width === 0
-    );
-    if (!isAtLeftEdge) currentPosition -= 1;
-    if (
-      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
-    ) {
-      currentPosition += 1;
-    }
-    draw();
-  }
-
-  // move the tetromino right, unless is at the edge or there is a blockage
-  function moveRight() {
-    undraw();
-    const isAtRightEdge = current.some(
-      (index) => (currentPosition + index) % width === width - 1
-    );
-    if (!isAtRightEdge) currentPosition += 1;
-    if (
-      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
-    ) {
-      currentPosition -= 1;
-    }
-    draw();
-  }
-
   // assign functions to keyCodes
   function control(e) {
     if (e.keyCode === 37) {
@@ -149,6 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // move the tetromino left, unless is at the edge or there is a blockage
+  function moveLeft() {
+    undraw();
+    const isAtLeftEdge = current.some(
+      (index) => (currentPosition + index) % width === 0
+    );
+    if (!isAtLeftEdge) currentPosition -= 1;
+    if (
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
+    ) {
+      currentPosition += 1;
+    }
+    draw();
+  }
+
+  // move the tetromino right, unless is at the edge or there is a blockage
+  function moveRight() {
+    undraw();
+    const isAtRightEdge = current.some(
+      (index) => (currentPosition + index) % width === width - 1
+    );
+    if (!isAtRightEdge) currentPosition += 1;
+    if (
+      current.some((index) => squares[currentPosition + index].classList.contains('taken'))
+    ) {
+      currentPosition -= 1;
+    }
+    draw();
+  }
+
   /// fix Rotation
   function isAtRight() {
     return current.some((index) => (currentPosition + index + 1) % width === 0);
@@ -171,6 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
         checkRotatedPosition(P);
       }
     }
+  }
+
+  // rotate the tetromino
+  function rotate() {
+    undraw();
+    currentRotation++;
+    if (currentRotation === current.length) {
+      currentRotation = 0;
+    }
+    current = theTetrominoes[random][currentRotation];
+    checkRotatedPosition();
+    draw();
   }
 
   // show up-next tetromino in mini-grid display
