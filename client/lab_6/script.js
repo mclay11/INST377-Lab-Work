@@ -20,7 +20,7 @@ async function windowActions() {
     const html = matchArray
       .map((place) => {
         const regex = new RegExp(event.target.value, "gi");
-        const cityName = place.city.replace(
+        place.name.replace(
           regex,
           `<span class="h1">${event.target.value.toUpperCase()}</span>`
         );
