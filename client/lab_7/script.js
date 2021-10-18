@@ -63,6 +63,7 @@ async function windowActions() {
     displayMatches(evt);
   });
   mapInit();
+  map.setView(point, 8);
 }
 
 window.onload = windowActions;
