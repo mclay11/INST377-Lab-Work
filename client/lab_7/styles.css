@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#mapid{
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.wrapper {
+  display: flex;
+  justify-content:space-between;
+}
+
+.boxstyle{
+  display:flex;
+  width: auto;
+}
+
+.container {
+  margin-left: 100px;
+  margin-top: 20px;
+  width: 500px;
+}
+
+li {
+  text-align: center;
+  background: rgb(165, 136, 187);
+  color: black;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: white;
+  }
+  .container{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+}
