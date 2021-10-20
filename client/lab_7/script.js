@@ -53,6 +53,7 @@ async function windowActions() {
       .join("");
 
     suggestions.innerHTML = html;
+    
   }
 
   const searchInput = document.querySelector(".search");
@@ -60,10 +61,14 @@ async function windowActions() {
 
   searchInput.addEventListener("change", displayMatches);
   searchInput.addEventListener("keyup", (evt) => {
-    displayMatches(evt);
+    if (searchInput.value === '') {
+      suggestions.innerHTML = '';
+    } else {
+      displayMatches(evt);
+    }
   });
   mapInit();
-  map.setView(point, 8);
+  /// map.setView(point, 8);
 }
 
 window.onload = windowActions;
